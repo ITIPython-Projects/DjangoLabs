@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+{% extends 'baseInterface.html' %}
+ {% block content %}
+<div class="container">
+  <h3>Inverted Navbar</h3>
+  <p>An inverted navbar is black instead of gray.</p>
+  <table border="1" width="100%">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>CateName</th>
+      <th>Action</th>
+    </tr>
+    {% for pro in products %}
+    <tr>
+      <td>{{pro.name}}</td>
+      <td>{{pro.price}}</td>
+      <td>{{pro.categoryId.name}}</td>
+      <td>
+        <a href="{% url 'updateProduct' pro.id %}"> Update </a>
+        <a href="{% url 'deleteProduct' pro.id %}"> Delete </a>
+      </td>
+    </tr>
+  {% endfor%}
+  </table>
+</div>
+{% endblock content %}
+
+</body>
+</html>

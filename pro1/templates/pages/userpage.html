@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+{% extends 'baseInterface.html' %}
+ {% block content %}
+<div class="container">
+  <h3><span style="color:blue">User</span> {{request.session.username}}</h3>
+  <p>Welcome</p>
+</div>
+{% endblock content %}
+
+</body>
+</html>

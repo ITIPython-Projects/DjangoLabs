@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>List All User</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+{% extends 'baseInterface.html' %}
+ {% block content %}
+<div class="container">
+  <h3>All Users</h3>
+  <p>An inverted navbar is black instead of gray.</p>
+  <table border="1" width="100%">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Action</th>
+    </tr>
+    {% for usr in object_list %}
+    <tr>
+      <td>{{usr.username}}</td>
+      <td>{{usr.email}}</td>
+      <td>{{usr.password}}</td>
+      <td>
+        <a href="#"> Update </a>
+        <a href="#"> Delete </a>
+      </td>
+    </tr>
+  {% endfor%}
+  </table>
+</div>
+{% endblock content %}
+
+</body>
+</html>
